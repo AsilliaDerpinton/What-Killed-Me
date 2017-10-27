@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
-public class TextController {
+public class PotatoController {
 
     @Autowired
     GreetingRepository repo;
@@ -18,8 +18,8 @@ public class TextController {
     private static final String template = "Hello, %s!";
     private final AtomicLong counter = new AtomicLong();
 
-    @RequestMapping("/greeting")
-    public Greeting greeting(@RequestParam(value="name", defaultValue="World") String name) {
+    @RequestMapping("/potato")
+    public Greeting potato(@RequestParam(value="Patat", defaultValue="Derpington") String name) {
 
         return new Greeting(counter.incrementAndGet(),
                 String.format(template, name));
